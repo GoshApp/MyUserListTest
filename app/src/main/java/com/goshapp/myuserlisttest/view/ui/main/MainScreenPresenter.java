@@ -1,4 +1,4 @@
-package com.goshapp.myuserlisttest.view.ui;
+package com.goshapp.myuserlisttest.view.ui.main;
 
 import com.goshapp.myuserlisttest.util.mvp.BaseView;
 import com.goshapp.myuserlisttest.view.base.AbsPresenter;

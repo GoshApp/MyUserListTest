@@ -1,12 +1,13 @@
-package com.goshapp.myuserlisttest.util.viewextention;
+package com.goshapp.myuserlisttest.util.mvp.viewextention;
 
 
-import android.support.annotation.StringRes;
+import androidx.annotation.StringRes;
 
-import com.thefintechlab.whitelabelandroid.R;
-import com.thefintechlab.whitelabelandroid.util.rx.ServerError;
+import com.goshapp.myuserlisttest.R;
+import com.goshapp.myuserlisttest.util.rx.ServerError;
 
-import javax.annotation.Nullable;
+import io.reactivex.annotations.Nullable;
+
 
 public interface ErrorView {
 

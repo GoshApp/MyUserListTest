@@ -1,6 +1,7 @@
-package com.goshapp.myuserlisttest.util.viewextention;
+package com.goshapp.myuserlisttest.util.mvp.viewextention;
 
-import android.support.annotation.StringRes;
+
+import androidx.annotation.StringRes;
 
 public interface MessageView {
 

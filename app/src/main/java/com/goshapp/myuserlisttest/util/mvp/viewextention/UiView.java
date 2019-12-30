@@ -1,4 +1,4 @@
-package com.goshapp.myuserlisttest.util.viewextention;
+package com.goshapp.myuserlisttest.util.mvp.viewextention;
 
 
 public interface UiView {

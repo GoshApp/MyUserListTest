@@ -4,31 +4,25 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
-import androidx.fragment.app.Fragment;
-
 import com.goshapp.myuserlisttest.di.AppComponent;
-
-import java.util.Set;
+import com.goshapp.myuserlisttest.di.DaggerAppComponent;
 
 import javax.inject.Inject;
 
-import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
-import dagger.android.support.HasSupportFragmentInjector;
 
 /**
  * Created by rikmen00@gmail.com on 30.12.2019.
  */
 
-public class UserListApp extends Application implements HasActivityInjector, HasSupportFragmentInjector {
+public class UserListApp extends Application implements HasActivityInjector{
 
     @Inject
     DispatchingAndroidInjector<Activity> androidInjector;
-    @Inject
-    DispatchingAndroidInjector<Fragment> androidFragmentInjector;
 
-    UserListApp appComponent;
+
+    AppComponent appComponent;
 
     @Override
     public void onCreate() {
@@ -41,6 +35,7 @@ public class UserListApp extends Application implements HasActivityInjector, Has
         appComponent.inject(this);
 
 
+
     }
 
     @Override
@@ -48,12 +43,7 @@ public class UserListApp extends Application implements HasActivityInjector, Has
         return androidInjector;
     }
 
-    @Override
-    public AndroidInjector<Fragment> supportFragmentInjector() {
-        return androidFragmentInjector;
-    }
-
-    public static UserListApp getAppComponent(Context context) {
+    public static AppComponent getAppComponent(Context context) {
         return ((UserListApp) context.getApplicationContext()).appComponent;
     }
 }

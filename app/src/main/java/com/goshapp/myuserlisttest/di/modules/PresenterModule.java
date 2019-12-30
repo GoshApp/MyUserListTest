@@ -4,7 +4,7 @@ import com.goshapp.myuserlisttest.di.PresenterKey;
 import com.goshapp.myuserlisttest.util.mvp.BasePresenter;
 import com.goshapp.myuserlisttest.util.mvp.DaggerPresenterFactory;
 import com.goshapp.myuserlisttest.util.mvp.PresenterFactory;
-import com.goshapp.myuserlisttest.view.ui.MainScreenPresenter;
+import com.goshapp.myuserlisttest.view.ui.main.MainScreenPresenter;
 
 import dagger.Binds;
 import dagger.Module;
