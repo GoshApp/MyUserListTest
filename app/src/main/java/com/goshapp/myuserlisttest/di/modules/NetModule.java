@@ -2,7 +2,7 @@ package com.goshapp.myuserlisttest.di.modules;
 
 import com.google.gson.Gson;
 import com.goshapp.myuserlisttest.BuildConfig;
-import com.goshapp.myuserlisttest.api.UserListApi;
+import com.goshapp.myuserlisttest.api.UserApi;
 
 import javax.inject.Singleton;
 
@@ -18,13 +18,13 @@ public class NetModule {
 
     @Singleton
     @Provides
-    UserListApi provideRetrofit(OkHttpClient client, Gson gson) {
+    UserApi provideRetrofit(OkHttpClient client, Gson gson) {
         return new Retrofit.Builder()
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .baseUrl(BuildConfig.BASE_URL)
                 .build()
-                .create(UserListApi.class);
+                .create(UserApi.class);
     }
 }
