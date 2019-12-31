@@ -1,48 +1,46 @@
-package com.goshapp.myuserlisttest.data.pojo;
+package com.goshapp.myuserlisttest.data.pojo.ui;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 import com.goshapp.myuserlisttest.data.converter.InfoListTypeConverter;
 import com.goshapp.myuserlisttest.data.converter.ResultListTypeConverter;
+import com.goshapp.myuserlisttest.data.pojo.Info;
+import com.goshapp.myuserlisttest.data.pojo.Result;
 
 import java.util.List;
 
-@Entity
-public class RandomUser {
-    @PrimaryKey
-    public int id;
+public class RendUser {
 
+    public int id;
     @TypeConverters(ResultListTypeConverter.class)
     public List<Result> results;
-
     @TypeConverters(InfoListTypeConverter.class)
     private List<Info> info;
+    public List<Result> getResults() {
+        return results;
+    }
 
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public RendUser setId(int id) {
         this.id = id;
+        return this;
+
     }
 
-    public List<Result> getResults() {
-        return results;
-    }
-
-    public void setResults(List<Result> results) {
+    public RendUser setResults(List<Result> results) {
         this.results = results;
+        return this;
     }
 
     public List<Info> getInfo() {
         return info;
     }
 
-    public void setInfo(List<Info> info) {
+    public RendUser setInfo(List<Info> info) {
         this.info = info;
+        return this;
     }
-
-
 }

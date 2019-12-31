@@ -4,7 +4,8 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.goshapp.myuserlisttest.api.response.RandomUser;
+
+import com.goshapp.myuserlisttest.data.pojo.RandomUser;
 
 import io.reactivex.Flowable;
 

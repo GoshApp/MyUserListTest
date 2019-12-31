@@ -1,6 +1,7 @@
 package com.goshapp.myuserlisttest.data.repo;
 
-import com.goshapp.myuserlisttest.api.response.RandomUser;
+
+import com.goshapp.myuserlisttest.data.pojo.RandomUser;
 
 import io.reactivex.Completable;
 

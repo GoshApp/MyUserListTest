@@ -1,8 +1,9 @@
 package com.goshapp.myuserlisttest.data.repo.impl;
 
 import com.goshapp.myuserlisttest.api.UserApi;
-import com.goshapp.myuserlisttest.api.response.RandomUser;
+
 import com.goshapp.myuserlisttest.data.db.dao.ProfileDao;
+import com.goshapp.myuserlisttest.data.pojo.RandomUser;
 import com.goshapp.myuserlisttest.data.repo.ProfileRepository;
 
 import io.reactivex.Completable;

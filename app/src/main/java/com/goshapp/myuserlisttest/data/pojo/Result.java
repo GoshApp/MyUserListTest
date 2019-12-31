@@ -1,9 +1,20 @@
 package com.goshapp.myuserlisttest.data.pojo;
 
 import androidx.room.Entity;
+import androidx.room.TypeConverters;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.goshapp.myuserlisttest.data.converter.DobListTypeConverter;
+import com.goshapp.myuserlisttest.data.converter.IdListTypeConverter;
+import com.goshapp.myuserlisttest.data.converter.InfoListTypeConverter;
+import com.goshapp.myuserlisttest.data.converter.LocationListTypeConverter;
+import com.goshapp.myuserlisttest.data.converter.LoginListTypeConverter;
+import com.goshapp.myuserlisttest.data.converter.NameListTypeConverter;
+import com.goshapp.myuserlisttest.data.converter.PictureListTypeConverter;
+import com.goshapp.myuserlisttest.data.converter.RegisteredTypeConverter;
+
+import java.util.List;
 
 @Entity
 public class Result {
@@ -11,36 +22,34 @@ public class Result {
     @SerializedName("gender")
     @Expose
     private String gender;
-    @SerializedName("name")
-    @Expose
-    private Name name;
-    @SerializedName("location")
-    @Expose
-    private Location location;
+
+    @TypeConverters(NameListTypeConverter.class)
+    private List<Name> name;
+    @TypeConverters(LocationListTypeConverter.class)
+    private List<Location> location;
     @SerializedName("email")
     @Expose
     private String email;
     @SerializedName("login")
     @Expose
-    private Login login;
-    @SerializedName("dob")
-    @Expose
-    private Dob dob;
-    @SerializedName("registered")
-    @Expose
-    private Registered registered;
+    @TypeConverters(LoginListTypeConverter.class)
+    private List<Login> login;
+    @TypeConverters(DobListTypeConverter.class)
+    private List<Dob> dob;
+    @TypeConverters(RegisteredTypeConverter.class)
+    private List<Registered> registered;
     @SerializedName("phone")
     @Expose
     private String phone;
     @SerializedName("cell")
     @Expose
     private String cell;
-    @SerializedName("id")
-    @Expose
-    private Id id;
-    @SerializedName("picture")
-    @Expose
-    private Picture picture;
+    @TypeConverters(IdListTypeConverter.class)
+    private List<Id> id;
+
+    @TypeConverters(PictureListTypeConverter.class)
+    private List<Picture> picture;
+
     @SerializedName("nat")
     @Expose
     private String nat;
@@ -53,21 +62,6 @@ public class Result {
         this.gender = gender;
     }
 
-    public Name getName() {
-        return name;
-    }
-
-    public void setName(Name name) {
-        this.name = name;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
 
     public String getEmail() {
         return email;
@@ -77,29 +71,6 @@ public class Result {
         this.email = email;
     }
 
-    public Login getLogin() {
-        return login;
-    }
-
-    public void setLogin(Login login) {
-        this.login = login;
-    }
-
-    public Dob getDob() {
-        return dob;
-    }
-
-    public void setDob(Dob dob) {
-        this.dob = dob;
-    }
-
-    public Registered getRegistered() {
-        return registered;
-    }
-
-    public void setRegistered(Registered registered) {
-        this.registered = registered;
-    }
 
     public String getPhone() {
         return phone;
@@ -115,22 +86,6 @@ public class Result {
 
     public void setCell(String cell) {
         this.cell = cell;
-    }
-
-    public Id getId() {
-        return id;
-    }
-
-    public void setId(Id id) {
-        this.id = id;
-    }
-
-    public Picture getPicture() {
-        return picture;
-    }
-
-    public void setPicture(Picture picture) {
-        this.picture = picture;
     }
 
     public String getNat() {

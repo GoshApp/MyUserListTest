@@ -9,10 +9,12 @@ public class RandomUser {
 
     @SerializedName("results")
     @Expose
-    private List<Result> results = null;
+    private List<Result> results;
+
     @SerializedName("info")
     @Expose
     private Info info;
+
 
     public List<Result> getResults() {
         return results;
